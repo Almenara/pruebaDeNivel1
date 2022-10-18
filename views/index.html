@@ -1,0 +1,174 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="../models/car.js"></script>
+    <script src="../models/wheel.js"></script>
+    <script src="../controllers/controller.js"></script>
+</head>
+
+<body>
+    <!--     <p id="carInfo"></p>
+    <button onclick="createCar('1212SDS','SEAT','ROJO')">Create car</button>
+    <div>
+        <p id="testOutput">Output</p> 
+    </div> -->
+
+    <div id="allbody" class="container">
+        <h1>Ejercicio Vehículos</h1>
+        <div id="create-car-form" class="container">
+
+            <div class="row">
+
+                <div class="col form-group">
+                    <label for="plateInput">Plate</label>
+                    <input type="text" class="form-control" id="plateInput">
+                </div>
+
+                <div class="col form-group">
+                    <label for="brandInput">Brand</label>
+                    <input type="text" class="form-control" id="brandInput">
+                </div>
+
+                <div class="col form-group">
+                    <label for="colorInput">Color</label>
+                    <input type="text" class="form-control" id="colorInput">
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col form-group">
+                    <button type="submit" class="btn btn-primary mb-2" onclick="submitCar()">Create Car</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="create-wheel-form" class="container" style="display: none;">
+
+            <div class="row">
+
+                <div class="col form-group">
+                    <label for="brandWheel1">Marca Rueda 1</label>
+                    <input type="text" class="form-control" id="brandWheel1">
+                </div>
+
+                <div class="col form-group">
+                    <label for="diameterWheel1">Diámetro Rueda 1</label>
+                    <input type="text" class="form-control" id="diameterWheel1">
+                </div>
+
+                <div class="col form-group">
+                    <label for="brandWheel2">Marca Rueda 2</label>
+                    <input type="text" class="form-control" id="brandWheel2">
+                </div>
+
+                <div class="col form-group">
+                    <label for="diameterWheel2">Diámetro Rueda 2</label>
+                    <input type="text" class="form-control" id="diameterWheel2">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col form-group">
+                    <label for="brandWheel3">Marca Rueda 3</label>
+                    <input type="text" class="form-control" id="brandWheel3">
+                </div>
+
+                <div class="col form-group">
+                    <label for="diameterWheel3">Diámetro Rueda 3</label>
+                    <input type="text" class="form-control" id="diameterWheel3">
+                </div>
+
+                <div class="col form-group">
+                    <label for="brandWheel4">Marca Rueda 4</label>
+                    <input type="text" class="form-control" id="brandWheel4">
+                </div>
+
+                <div class="col form-group">
+                    <label for="diameterWheel4">Diámetro Rueda 4</label>
+                    <input type="text" class="form-control" id="diameterWheel4">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col form-group">
+                    <button type="submit" class="btn btn-primary mb-2" onclick="submitWheelForm()">Add Wheels</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="result-car-form" class="container">
+
+            <div class="row">
+
+                <div class=" col create-car-output">
+                    <p id="carTitle"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class=" col create-car-output">
+                    <p id="plateOutput">
+                        <p>
+                </div>
+
+                <div class=" col create-car-output">
+                    <p id="brandOutput"></p>
+                </div>
+
+                <div class=" col create-car-output">
+                    <p id="colorOutput"></p>
+                </div>
+
+                <div class=" col create-car-output"> </div>
+
+            </div>
+
+        </div>
+
+
+        <div id="result-wheels-form" class="container">
+
+            <div class="row">
+
+                <div class=" col create-car-output">
+                    <p id="wheelTitle"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class=" col create-car-output">
+                    <p id="wheelOutput1">
+                        <p>
+                </div>
+
+                <div class=" col create-car-output">
+                    <p id="wheelOutput2"></p>
+                </div>
+
+                <div class=" col create-car-output">
+                    <p id="wheelOutput3"></p>
+                </div>
+
+                <div class=" col create-car-output">
+                    <p id="wheelOutput4"></p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+</body>
